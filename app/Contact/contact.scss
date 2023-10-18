@@ -1,0 +1,158 @@
+.contact_wrapper {
+  .contact_top_wrapper {
+    transition: background 0.3s, border 0.3s, border-radius 0.3s,
+      box-shadow 0.3s;
+    padding: 100px 0px 100px 0px;
+    background-color: #f9c4ba;
+    position: relative;
+    text-align: center;
+    .contact_header {
+      position: relative;
+      .bigstar_image {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        top: -39%;
+        left: 39%;
+      }
+      .smallstar_image {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        right: 39%;
+        bottom: -16%;
+      }
+      .contact_ {
+        color: #4c3347;
+        font-family: "Cormorant Garamond", "Sans-serif";
+        font-size: 64px;
+        font-weight: 700;
+        margin-bottom: 0%;
+      }
+    }
+    .contact_content {
+      transition: background 0.3s, border 0.3s, border-radius 0.3s,
+        box-shadow 0.3s, transform var(--e-transform-transition-duration, 0.4s);
+      color: #685b65;
+      font-size: 16px;
+      font-weight: 400;
+      font-family: "Poppins", "Sans-serif";
+    }
+  }
+  .contact_cards_wrapper {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    position: relative;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    gap: 20px;
+    max-width: 1140px;
+    .contact_card {
+      background-color: #fef4ea;
+      transition: background 0.3s, border 0.3s, border-radius 0.3s,
+        box-shadow 0.3s;
+      padding: 45px 25px 45px 25px;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      border-radius: 10px;
+      .upper_ {
+        border-radius: 10px;
+        background-color: #fff;
+        padding: 15px 0px 15px 0px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+  }
+  .contact_form_wrapper {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    max-width: 1140px;
+    .form_subwrapper {
+      display: flex;
+      margin-right: auto;
+      margin-left: auto;
+      position: relative;
+      .form_lhs {
+        position: relative;
+        min-height: 1px;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        padding: 0px 60px 0px 0px;
+        .form_header {
+          color: #4c3347;
+          font-family: "Cormorant Garamond", "Sans-serif";
+          font-size: 48px;
+          font-weight: 600;
+          margin-bottom: 10px;
+        }
+        .contact_desc {
+          font-size: 14px;
+          font-weight: 400;
+          font-family: "Poppins", "Sans-serif";
+          color: #7a7a7a;
+        }
+
+        .social_media_wrapper {
+          display: flex;
+          gap: 10px;
+          .social_media_tag {
+            color: #4c3347;
+            font-family: "Cormorant Garamond", "Sans-serif";
+            font-size: 25px;
+            font-weight: 600;
+          }
+
+          .social_media_icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            .insta {
+              background-color: #fff;
+              border-radius: 50%;
+              width: 30px;
+              height: 30px;
+            }
+            .twitter {
+              background-color: #fff;
+              border-radius: 50%;
+              width: 30px;
+              height: 30px;
+            }
+            .youtube {
+              background-color: #fff;
+              border-radius: 50%;
+              width: 30px;
+              height: 30px;
+            }
+            .facebook {
+              background-color: #fff;
+              border-radius: 50%;
+              width: 35px;
+              height: 35px;
+            }
+          }
+        }
+      }
+
+      .form_rhs {
+      }
+    }
+  }
+}

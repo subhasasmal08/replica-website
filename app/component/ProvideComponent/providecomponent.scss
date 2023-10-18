@@ -1,0 +1,86 @@
+.home_page_provide {
+  display: flex;
+  margin-top: 150px;
+  margin-bottom: 0px;
+  padding: 0px 0px 0px 0px;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  .home_page_provide_lhs {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px 0px 0px 0px;
+    // padding: 0% 6% 0% 12%;
+    .upper_ {
+      .upper_header {
+        font-size: 48px;
+        font-weight: 600;
+        font-family: "Cormorant Garamond", "serif";
+      }
+      .provide_desc {
+        color: #7a7a7a;
+        font-family: "Poppins", "Sans-serif";
+        font-size: 14px;
+        font-weight: 400;
+        width: 800px;
+        text-align: center;
+        margin-bottom: 50px;
+      }
+    }
+    .lower_ {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .provide_cards {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 36px;
+
+        .provide_images{
+          width: 40px ;
+          height: 40px ;
+        }
+        .provide_cards_wrapper {
+          display: flex;
+          flex-direction: column;
+          width: 260px;
+
+          .provide_header {
+            color: #4c3347;
+            font-family: "Cormorant Garamond", "serif";
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 0;
+          }
+          .provide_content {
+            color: #7a7a7a;
+            font-family: "Poppins", "Sans-serif";
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 10px;
+          }
+          .read_more_ {
+            color: #c267d1;
+            font-family: "Poppins", "Sans-serif";
+            font-size: 16px;
+            font-weight: 500;
+            display: flex;
+            gap: 10px;
+          }
+        }
+      }
+    }
+  }
+  .home_page_provide_rhs {
+    width: 50.048%;
+    .provide_image {
+      width: 900px;
+      height: 1000px;
+      border-radius: 10px;
+    }
+  }
+}

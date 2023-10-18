@@ -1,0 +1,97 @@
+.home_page_about {
+  margin-top: 200px;
+  margin-bottom: 0px;
+  padding: 0px 0px 0px 0px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  .home_page_about_lhs {
+    .about_me_ {
+      position: absolute;
+      color: #4c3347;
+      font-family: "Cormorant Garamond", "serif";
+      font-size: 63px;
+      font-weight: 600;
+      top: -10%;
+      left: 24%;
+    }
+
+    .count_wrapper {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      top: 20%;
+      left: 24%;
+      gap: 20px;
+      .count_subwrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .count_ {
+          display: flex;
+          justify-content: center;
+          color: #4c3347;
+          font-family: "Poppins", "Sans-serif";
+          font-weight: 500;
+          font-size: 40px;
+          margin: 0;
+        }
+        .count_type {
+          color: #f49785;
+          font-family: "Poppins", "Sans-serif";
+          font-weight: 400;
+          font-size: 20px;
+          margin: 0;
+        }
+      }
+    }
+  }
+  .home_page_about_rhs {
+    position: absolute;
+    right: 14%;
+    top: 15%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .description_header {
+      font-family: "Cormorant Garamond", "serif";
+      font-size: 48px;
+      font-weight: 600;
+      margin-bottom: 0px;
+    }
+
+    .description_ {
+      width: 280px;
+      padding: 0% 5% 0% 0%;
+      color: #685b65;
+      font-family: "Poppins", "Sans-serif";
+      font-weight: 400;
+      font-size: 16px;
+    }
+  }
+
+  .home_page_about_image {
+    .about_image {
+      border-radius: 10px;
+      height: auto;
+      width: 350px;
+    }
+    .lineround_image {
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      top: -15%;
+      right: 33%;
+    }
+    .blob_image {
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      bottom: -16%;
+      left: 30%;
+      z-index: -1;
+    }
+  }
+}

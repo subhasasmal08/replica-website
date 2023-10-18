@@ -1,0 +1,342 @@
+.about_wrapper {
+  .btn {
+    font-family: "Poppins", "Sans-serif";
+    font-size: 18px;
+    font-weight: 500;
+    fill: #ffffff;
+    color: #ffffff;
+    background-color: #c267d1;
+    border-radius: 30px 30px 30px 30px;
+    padding: 15px 35px 15px 35px;
+    display: flex;
+    align-items: center;
+    border: none;
+    justify-content: center;
+  }
+  .about_top_wrapper {
+    transition: background 0.3s, border 0.3s, border-radius 0.3s,
+      box-shadow 0.3s;
+    padding: 100px 0px 100px 0px;
+    background-color: #f9c4ba;
+    position: relative;
+    text-align: center;
+    .about_header {
+      position: relative;
+      .bigstar_image {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        top: -39%;
+        left: 39%;
+      }
+      .smallstar_image {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        right: 39%;
+        bottom: -16%;
+      }
+      .about_ {
+        color: #4c3347;
+        font-family: "Cormorant Garamond", "serif";
+        font-size: 64px;
+        font-weight: 700;
+        margin-bottom: 0;
+      }
+    }
+    .about_content {
+      transition: background 0.3s, border 0.3s, border-radius 0.3s,
+        box-shadow 0.3s, transform var(--e-transform-transition-duration, 0.4s);
+      color: #685b65;
+      font-size: 16px;
+      font-weight: 400;
+      font-family: "Poppins", "Sans-serif";
+    }
+  }
+
+  .home_page_about {
+    margin-top: 150px;
+    margin-bottom: 0px;
+    padding: 0px 0px 0px 0px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    max-width: 1170px;
+    .home_page_about_rhs {
+      position: absolute;
+      left: 69%;
+      top: 13%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .description_header {
+        font-family: "Cormorant Garamond", "serif";
+        font-size: 48px;
+        font-weight: 600;
+        margin-bottom: 0px;
+      }
+
+      .subheader {
+        margin: 0;
+        color: #4c3347;
+        font-family: "Poppins", "Sans-serif";
+        font-weight: 400;
+        font-size: 18px;
+      }
+
+      .description_ {
+        width: 600px;
+        padding: 0% 5% 0% 0%;
+        color: #685b65;
+        font-family: "Poppins", "Sans-serif";
+        font-weight: 400;
+        font-size: 16px;
+      }
+
+      .signature_image {
+        width: 120px;
+        height: 80px;
+      }
+    }
+
+    .home_page_about_image {
+      .about_image {
+        border-radius: 10px;
+        height: auto;
+        width: 350px;
+      }
+      .lineround_image {
+        position: absolute;
+        width: 180px;
+        height: 180px;
+        top: -15%;
+        right: 33%;
+      }
+      .blob_image {
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        bottom: -16%;
+        left: 30%;
+        z-index: -1;
+      }
+    }
+  }
+  .about_quotes_wrapper {
+    transition: background 0.3s, border 0.3s, border-radius 0.3s,
+      box-shadow 0.3s;
+    margin-top: 150px;
+    margin-bottom: 0px;
+    padding: 100px 0px 100px 0px;
+    background-color: #fef4ea;
+    text-align: center;
+
+    .quotes_image {
+      width: 100px;
+      height: 100px;
+    }
+
+    .header_ {
+      color: #4c3347;
+      font-family: "Cormorant Garamond", "serif";
+      font-size: 48px;
+      font-weight: 600;
+      text-align: center;
+      max-width: 1140px;
+      display: flex;
+      margin-right: auto;
+      margin-left: auto;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .author {
+      color: #7a7a7a;
+      font-size: 14px;
+      font-weight: 400;
+      font-family: "Poppins", "Sans-serif";
+    }
+  }
+
+  .about_journey_wrapper {
+    padding: 100px 0px 100px 0px;
+    position: relative;
+    .about_ {
+      background-image: url(https://templatekit.jegtheme.com/lyfes/wp-content/uploads/sites/204/2021/11/background-wave_6-02.png);
+      background-position: -220px 0px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0.5;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      position: absolute;
+    }
+    .about_journey_subwrapper {
+      max-width: 1140px;
+      display: flex;
+      margin-right: auto;
+      margin-left: auto;
+      position: relative;
+
+      .journey_lhs {
+        width: 50%;
+        position: relative;
+        min-height: 1px;
+        display: flex;
+        flex-direction: column;
+        padding: 0px 50px 0px 0px;
+        position: relative;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .journey_ {
+          color: #4c3347;
+          font-family: "Poppins", "Sans-serif";
+          font-size: 18px;
+          font-weight: 400;
+          margin: 0;
+        }
+        .many_ {
+          color: #4c3347;
+          font-family: "Cormorant Garamond", "serif";
+          font-size: 40px;
+          font-weight: 600;
+          margin-top: 5px;
+        }
+        .journey_content {
+          color: #7a7a7a;
+          font-family: "Poppins", "Sans-serif";
+          font-size: 16px;
+          font-weight: 400;
+        }
+        .journey_cards_wrapper {
+          margin-top: 20px;
+          margin-bottom: 0px;
+          padding: 0px 0px 0px 0px;
+          display: flex;
+          margin-right: auto;
+          margin-left: auto;
+          position: relative;
+          max-width: 1140px;
+          .journey_card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0px 15px 0px 0px;
+            position: relative;
+            width: 100%;
+            align-items: center;
+            gap: 10px;
+
+            .icon_ {
+              width: 50px;
+              height: 50px;
+              margin: 0;
+            }
+
+            .count_ {
+              color: #4c3347;
+              font-family: "Poppins", "Sans-serif";
+              font-size: 40px;
+              font-weight: 500;
+              margin: 0;
+            }
+
+            .header_ {
+              margin: 0;
+              width: 180px;
+              display: flex;
+              justify-content: center;
+              color: #4c3347;
+              font-family: "Poppins", "Sans-serif";
+              font-size: 14px;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+      .journey_rhs {
+        position: relative;
+        .journey_image {
+          width: 500px;
+          height: 600px;
+          border-radius: 10px;
+        }
+        .lineround_image {
+          width: 150px;
+          height: 150px;
+          position: absolute;
+          right: 0%;
+          top: -14%;
+        }
+        .blog_image {
+          width: 150px;
+          height: 150px;
+          z-index: -1;
+          position: absolute;
+          right: 82%;
+          top: 85%;
+        }
+      }
+    }
+  }
+
+  .about_dreams_wrapper {
+    background-attachment: fixed;
+    background-image: url(https://templatekit.jegtheme.com/lyfes/wp-content/uploads/sites/204/2021/11/young-successful-women-colleagues-discuss-joint-project-coaching-in-loft-office.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: background 0.3s, border 0.3s, border-radius 0.3s,
+      box-shadow 0.3s;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 140px 0px 140px 0px;
+    position: relative;
+
+    .dreams_ {
+      background-color: #4c3347;
+      opacity: 0.8;
+      transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      position: absolute;
+    }
+    .about_journey_subwrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-right: auto;
+      margin-left: auto;
+      position: relative;
+      max-width: 1140px;
+      gap: 10px;
+
+      .unlock_ {
+        color: #fff;
+        font-family: "Cormorant Garamond", "serif";
+        font-size: 48px;
+        font-weight: 600;
+        margin-bottom: 0;
+      }
+
+      .content_ {
+        color: #fff;
+        font-family: "Poppins", "Sans-serif";
+        font-size: 14px;
+        font-weight: 400;
+        text-align: center;
+        width: 43vw;
+      }
+    }
+  }
+}

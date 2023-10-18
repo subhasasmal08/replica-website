@@ -1,0 +1,158 @@
+.home_page_plan {
+  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  margin-bottom: 0px;
+  padding: 90px 0px 90px 0px;
+  background-color: #fef4ea;
+
+  .btn {
+    width: 100%;
+    font-family: "Poppins", "Sans-serif";
+    font-size: 14px;
+    font-weight: 500;
+    fill: #ffffff;
+    color: #ffffff;
+    background-color: #c267d1;
+    border-radius: 30px 30px 30px 30px;
+    padding: 15px 35px 15px 35px;
+    display: flex;
+    align-items: center;
+    border: none;
+    justify-content: center;
+  }
+  .home_page_plan_wrapper {
+    padding: 10px;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    max-width: 1140px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    .plan_header {
+      font-size: 35px;
+      font-weight: 600;
+      font-family: "Cormorant Garamond", "Sans-serif";
+      margin-bottom: 5px;
+    }
+    .plan_card_content {
+      color: #685b65;
+      font-family: "Poppins", "Sans-serif";
+      font-size: 16px;
+      font-weight: 400;
+      width: 500px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .plan_cards_wrapper {
+      display: flex;
+      margin-right: auto;
+      margin-left: auto;
+      position: relative;
+      transition: background 0.3s, border 0.3s, border-radius 0.3s,
+        box-shadow 0.3s;
+      .plan_card {
+        flex-direction: column;
+        background-color: #ffffff;
+        padding: 50px;
+        display: flex;
+        position: relative;
+        width: 280px;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        justify-content: center;
+        .upper_plan_card {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+
+          .plan_card_header {
+            font-family: "Poppins", "Sans-serif";
+            font-size: 24px;
+            font-weight: 500;
+            font-family: "Poppins", "Sans-serif";
+            margin: 8px;
+          }
+          .plan_subheader {
+            color: #7a7a7a;
+            font-size: 16px;
+            font-weight: 400;
+            font-family: "Poppins", "Sans-serif";
+          }
+          .plan_images {
+            width: 65px;
+            height: 65px;
+          }
+        }
+        .plan_content {
+          text-align: left;
+          .tick_sen {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            font-size: 16px;
+            font-weight: 400;
+            font-family: "Poppins", "Sans-serif";
+            color: #4c3347;
+
+            .sentence_ {
+              margin: 0;
+              font-size: 14px;
+              font-weight: 400;
+              font-family: "Poppins", "Sans-serif";
+              color: #4c3347;
+            }
+          }
+        }
+        .line {
+          width: 100%;
+          border: 1px dashed #f49785;
+        }
+        .pricing_wrapper {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          .price_{
+            font-size: 30px;
+            font-weight: 600;
+            font-family: "Poppins", "Sans-serif";
+            color: #F49785;
+          }
+        }
+      }
+      .start {
+        transition: background 0.3s, border 0.3s, border-radius 0.3s,
+          box-shadow 0.3s;
+        margin: 30px 0px 30px 20px;
+        margin-right: 0px;
+        margin-left: 20px;
+        padding: 50px 50px 50px 50px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+      .middle {
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        transition: background 0.3s, border 0.3s, border-radius 0.3s,
+          box-shadow 0.3s;
+        margin: 10px 0px 10px 0px;
+        padding: 50px 50px 50px 50px;
+        margin-right: 0px;
+        margin-left: 0px;
+        border-radius: 10px;
+        z-index: 1;
+      }
+      .end {
+        transition: background 0.3s, border 0.3s, border-radius 0.3s,
+          box-shadow 0.3s;
+        margin: 30px 20px 30px 0px;
+        margin-right: 20px;
+        margin-left: 0px;
+        padding: 50px 50px 50px 50px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+    }
+  }
+}
