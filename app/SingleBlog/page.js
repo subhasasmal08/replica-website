@@ -6,8 +6,11 @@ import Image from "next/image";
 import mindfullness from "../../public/assets/Images/mindfullness.jpg";
 import worklife from "../../public/assets/Images/worklife.jpg";
 import { Insta, Twitter, Youtube } from "../component/Navbar/Navbar";
+import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
-export default class page extends Component {
+
+class Child extends Component {
   constructor(props) {
     super(props);
 
@@ -183,6 +186,14 @@ export default class page extends Component {
     );
   }
 }
+
+const Page = (props) => {
+  const router = useRouter();
+  const pathname = usePathname();
+  return <Child {...props} router={router} pathname={pathname} />;
+};
+
+export default Page;
 
 export const Clock = (props) => (
   <svg

@@ -2,8 +2,17 @@ import { Arrow } from "@/app/page";
 import React, { Component } from "react";
 import "./blogcomponent.scss";
 import { Clock } from "@/app/SingleBlog/page";
+import { usePathname, useRouter } from "next/navigation";
+import { Link } from "react-router-dom";
 
-export default class BlogComponent extends Component {
+class Child extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      name: "subha",
+    };
+  }
   renderBlogCards = [
     {
       image: "https://source.unsplash.com/random/200x200?sig=1",
@@ -47,10 +56,24 @@ export default class BlogComponent extends Component {
                     <Clock /> {item.date}
                   </p>
                   <p className="content_">{item.content}</p>
-                  <div className="read_more_">
+                  <div
+                    className="read_more_"
+                    onClick={() => {
+                      this.props.router.push("/SingleBlog");
+                    }}
+                  >
                     Read more
                     <Arrow />
                   </div>
+                  {/* <Link
+                    className="btn btn-primary"
+                    to={{
+                      pathname: "/SingleBlog",
+                      state,
+                    }}
+                  >
+                    Read more
+                  </Link> */}
                 </div>
               );
             })}
@@ -60,3 +83,11 @@ export default class BlogComponent extends Component {
     );
   }
 }
+
+const Page = (props) => {
+  const router = useRouter();
+  const pathname = usePathname();
+  return <Child {...props} router={router} pathname={pathname} />;
+};
+
+export default Page;
