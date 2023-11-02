@@ -6,6 +6,7 @@ import bulb from "../../../public/assets/Images/bulb.png";
 import plane from "../../../public/assets/Images/plane.png";
 import heart from "../../../public/assets/Images/heart.png";
 import Image from "next/image";
+import Button from "../Button/Button";
 
 export default class HomeComponent extends Component {
   render() {
@@ -35,7 +36,7 @@ export default class HomeComponent extends Component {
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam
             </p>
-            <button className="btn">Get Started Today</button>
+            <Button name={"Get Started Today"} />
           </div>
           <div className="rhs_wrapper">
             <Image

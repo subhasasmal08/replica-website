@@ -12,6 +12,7 @@ import blob from "../../public/assets/Images/Blob.png";
 import about from "../../public/assets/Images/about.jpg";
 import signature from "../../public/assets/Images/signature.png";
 import BigStar from "../../public/assets/Images/Bigstar.png";
+import Button from "../component/Button/Button";
 
 export default class page extends Component {
   renderJourneyData = [
@@ -171,7 +172,9 @@ export default class page extends Component {
               reprehenderit in voluptate velit esse cillum dolore eu fugiat
               nulla pariatur.
             </p>
-            <button className="btn">Start Consultation</button>
+           <Button
+           name={"Start Consultation"}
+           />
           </div>
         </div>
         <BlogComponent />

@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import "./blogcomponent.scss";
 import { Clock } from "@/app/SingleBlog/page";
 import { usePathname, useRouter } from "next/navigation";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 class Child extends Component {
   constructor(props) {
@@ -51,12 +51,22 @@ class Child extends Component {
               return (
                 <div className="blog_card">
                   <img src={item.image} className="blog_image"></img>
-                  <p className="header_">{item.header}</p>
+                  <Link
+                    href={{
+                      pathname: "/SingleBlog",
+                      query: {
+                        data: item.header.replaceAll(" ", "_"),
+                      },
+                    }}
+                    className="header_"
+                  >
+                    {item.header}
+                  </Link>
                   <p className="date_">
                     <Clock /> {item.date}
                   </p>
                   <p className="content_">{item.content}</p>
-                  <div
+                  {/* <div
                     className="read_more_"
                     onClick={() => {
                       this.props.router.push("/SingleBlog");
@@ -64,16 +74,19 @@ class Child extends Component {
                   >
                     Read more
                     <Arrow />
-                  </div>
-                  {/* <Link
-                    className="btn btn-primary"
-                    to={{
+                  </div> */}
+                  <Link
+                    href={{
                       pathname: "/SingleBlog",
-                      state,
+                      query: {
+                        data: item.header.replaceAll(" ", "_"),
+                      },
                     }}
+                    className="read_more_"
                   >
                     Read more
-                  </Link> */}
+                    <Arrow />
+                  </Link>
                 </div>
               );
             })}

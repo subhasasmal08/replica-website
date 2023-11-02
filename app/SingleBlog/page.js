@@ -6,9 +6,8 @@ import Image from "next/image";
 import mindfullness from "../../public/assets/Images/mindfullness.jpg";
 import worklife from "../../public/assets/Images/worklife.jpg";
 import { Insta, Twitter, Youtube } from "../component/Navbar/Navbar";
-import { useRouter } from "next/router";
-import { usePathname } from "next/navigation";
-
+import { usePathname, useRouter } from "next/navigation";
+import Button from "../component/Button/Button";
 
 class Child extends Component {
   constructor(props) {
@@ -36,12 +35,30 @@ class Child extends Component {
     },
   ];
 
+  componentDidMount() {
+    let searchParam = window.location.search;
+    console.log(searchParam);
+    if (searchParam !== "") {
+      this.setState({
+        activeBlog: {
+          picture: mindfullness,
+          header: searchParam.split("=")[1].replaceAll("_", " "),
+          date: "NOVEMBER 5, 2021",
+          content: "",
+        },
+      });
+    }
+  }
+
   render() {
     return (
       <div className="single_blog_wrapper">
         <div className="single_blog_subwrapper">
           <div className="mind_wrapper">
-            <h2 id="single_blog"  className="header_">{this.state.activeBlog.header}</h2>
+            {console.log(this.state.activeBlog)}
+            <h2 id="single_blog" className="header_">
+              {this.state.activeBlog.header}
+            </h2>
             <div className="date_wrapper">
               <Clock />
               <p className="date_">{this.state.activeBlog.date}</p>
@@ -124,7 +141,7 @@ class Child extends Component {
                       placeholder="blur"
                     />
                     <a
-                    href="#single_blog"
+                      href="#single_blog"
                       onClick={() => {
                         this.setState({
                           activeBlog: {
@@ -178,7 +195,7 @@ class Child extends Component {
                 time I comment.
               </p>
             </div>
-            <button className="btn">Post Comment</button>
+            <Button name={"Post Comment"} />
           </div>
         </div>
         <Footer />

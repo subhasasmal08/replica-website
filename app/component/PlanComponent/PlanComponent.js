@@ -5,6 +5,7 @@ import Image from "next/image";
 import base from "../../../public/assets/Images/base.png";
 import pro from "../../../public/assets/Images/pro.png";
 import elite from "../../../public/assets/Images/elite.png";
+import Button from "../Button/Button";
 
 export default class PlanComponent extends Component {
   renderPlanData = [
@@ -112,7 +113,7 @@ export default class PlanComponent extends Component {
                         /Month
                       </span>
                     </p>
-                    <button className="btn">Book A session</button>
+                    <Button name={"Book A Sesson"} />
                   </div>
                 </div>
               );

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Button from "../Button/Button";
 
 export default class ConsultationComponent extends Component {
   render() {
@@ -20,7 +21,9 @@ export default class ConsultationComponent extends Component {
             reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
             pariatur.
           </p>
-          <button className="btn">Start Consultation</button>
+          <Button
+           name={"Start Consultation"}
+           />
         </div>
       </div>
     );

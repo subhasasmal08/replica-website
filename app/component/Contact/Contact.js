@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./contact.scss";
+import Button from "../Button/Button";
 
 export default class Contact extends Component {
   render() {
@@ -27,7 +28,7 @@ export default class Contact extends Component {
             <textarea className="input_" />
           </div>
         </div>
-        <button className="btn">Send Message</button>
+        <Button name={"Send Message"} />
       </div>
     );
   }

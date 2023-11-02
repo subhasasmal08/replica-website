@@ -75,25 +75,28 @@ class Child extends Component {
                     className="related_image"
                     placeholder="blur"
                   />
-                  <p
+                  {/* <p
                     onClick={() => {
-                      this.props.router.replace("/SingleBlog", "subha", {
-                        shallow: true,
-                      });
+                      // this.props.router.replace("/SingleBlog", "subha", {
+                      // });
+                      this.props.router.push("/SingleBlog", { data: item });
                     }}
                     className="header_"
                   >
                     {item.header}
-                  </p>
+                  </p> */}
 
-                  {/* <Link
+                  <Link
+                    href={{
+                      pathname: "/SingleBlog",
+                      query: {
+                        data: item.header.replaceAll(" ", "_"),
+                      },
+                    }}
                     className="header_"
-                    href={"/SingleBlog"}
-                    as={`/SingleBlog${"data"}`}
-                    passHref
                   >
                     {item.header}
-                  </Link> */}
+                  </Link>
 
                   <p className="date_">
                     <Clock className="clock_" />

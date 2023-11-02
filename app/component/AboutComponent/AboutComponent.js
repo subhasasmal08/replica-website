@@ -4,6 +4,7 @@ import "./aboutcomponent.scss";
 import about from "../../../public/assets/Images/about.jpg";
 import lineround from "../../../public/assets/Images/Line-round.png";
 import blob from "../../../public/assets/Images/Blob.png";
+import Button from "../Button/Button";
 
 export default class AboutComponent extends Component {
   renderCountDivData = [
@@ -38,7 +39,9 @@ export default class AboutComponent extends Component {
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco
           </div>
-          <button className="btn">Read more</button>
+          <Button
+           name={"Read more"}
+           />
         </div>
         <div className="home_page_about_image">
           <Image

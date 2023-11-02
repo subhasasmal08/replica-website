@@ -15,6 +15,7 @@ import problem from "../../../public/assets/Images/problem.png";
 import growth from "../../../public/assets/Images/growth.png";
 import relationships from "../../../public/assets/Images/relationships.png";
 import life from "../../../public/assets/Images/life.png";
+import Link from "next/link";
 
 export default class ProvideComponent extends Component {
   constructor(props) {
@@ -142,10 +143,18 @@ export default class ProvideComponent extends Component {
                   <div className="provide_cards_wrapper">
                     <p className="provide_header">{item.header}</p>
                     <div className="provide_content">{item.desc}</div>
-                    <div className="read_more_">
+                    <Link
+                      href={{
+                        pathname: "/SingleBlog",
+                        query: {
+                          data: item.header.replaceAll(" ", "_"),
+                        },
+                      }}
+                      className="read_more_"
+                    >
                       Read more
-                      <Arrow />{" "}
-                    </div>
+                      <Arrow />
+                    </Link>
                   </div>
                 </div>
               );
