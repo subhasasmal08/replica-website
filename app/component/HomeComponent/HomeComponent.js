@@ -21,7 +21,7 @@ export default class HomeComponent extends Component {
                 className="bigstar_image"
                 placeholder="blur"
               />
-              <h2 className="header_">
+              <h2 className="header_ in-left">
                 Support your personal development and chase your dream
               </h2>
               <Image

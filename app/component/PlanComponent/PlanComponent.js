@@ -92,10 +92,10 @@ export default class PlanComponent extends Component {
                   <div className="plan_content">
                     {item.points.map((data) => {
                       return (
-                        <p className="tick_sen">
+                        <div className="tick_sen">
                           <Tick />
                           <p className="sentence_">{data}</p>
-                        </p>
+                        </div>
                       );
                     })}
                   </div>
