@@ -86,6 +86,13 @@ export default class ProvideComponent extends Component {
             },
           ],
         });
+    const element = document.querySelector(".upper_header");
+    const observer = new IntersectionObserver((entries) => {
+      console.log("first");
+      element.classList.toggle("in-left", entries[0].isIntersecting);
+    });
+
+    observer.observe(element);
   }
 
   render() {

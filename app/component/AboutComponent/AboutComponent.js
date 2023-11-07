@@ -7,21 +7,63 @@ import blob from "../../../public/assets/Images/Blob.png";
 import Button from "../Button/Button";
 
 export default class AboutComponent extends Component {
-  renderCountDivData = [
-    { name: "persons_mentored", number: 80 },
-    { name: "seminar_speaker", number: 35 },
-    { name: "coaching_certificates", number: 12 },
-  ];
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      renderCountDivData: [
+        { name: "persons_mentored", number: 80 },
+        { name: "seminar_speaker", number: 35 },
+        { name: "coaching_certificates", number: 12 },
+      ],
+    };
+  }
+
+  componentDidMount() {
+    const element = document.querySelector(".about_me_");
+    const observer = new IntersectionObserver((entries) => {
+      element.classList.toggle("in-left", entries[0].isIntersecting);
+    });
+    observer.observe(element);
+
+    const element_right = document.querySelector(".description_header");
+    const observer_right = new IntersectionObserver((entries) => {
+      element_right.classList.toggle("in-right", entries[0].isIntersecting);
+    });
+    observer_right.observe(element_right);
+  }
+
+   count = (total) => {
+    var cout = 0;
+    // console.log(total);
+    var i = 0;
+    setInterval(function () {
+      if (cout === 10) clearInterval(this);
+      else {
+        console.log("Currently at " + i++);
+        cout = i++;
+      }
+    }, 10);
+    console.log(cout);
+    return cout;
+  };
+
+  
+
   render() {
+  
+
     return (
       <div className="home_page_about">
         <div className="home_page_about_lhs">
-          <h2 className="about_me_">About Me</h2>
+          <h2 className="about_me_ ">About Me</h2>
           <div className="count_wrapper">
-            {this.renderCountDivData.map((item) => {
+          <h2 className="count_">{this.count}</h2>
+            {this.state.renderCountDivData.map((item) => {
               return (
                 <div className="count_subwrapper">
                   <h2 className="count_">{item.number}</h2>
+
                   <span className="count_type">
                     {item.name.replaceAll("_", " ")}
                   </span>
@@ -39,9 +81,7 @@ export default class AboutComponent extends Component {
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco
           </div>
-          <Button
-           name={"Read more"}
-           />
+          <Button name={"Read more"} />
         </div>
         <div className="home_page_about_image">
           <Image

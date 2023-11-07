@@ -18,7 +18,7 @@ export default class HomeComponent extends Component {
               <Image
                 src={BigStar}
                 alt="BigStar"
-                className="bigstar_image"
+                className="bigstar_image zoom-in"
                 placeholder="blur"
               />
               <h2 className="header_ in-left">
@@ -27,38 +27,38 @@ export default class HomeComponent extends Component {
               <Image
                 src={BigStar}
                 alt="smallStar"
-                className="smallstar_image"
+                className="smallstar_image zoom-in"
                 placeholder="blur"
               />
             </div>
-            <p className="lhs_subheader">
+            <p className="lhs_subheader in-right">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam
             </p>
-            <Button name={"Get Started Today"} />
+            <Button className={"in-right"} name={"Get Started Today"} />
           </div>
           <div className="rhs_wrapper">
             <Image
               src={upwards}
               alt="upwards"
-              className="upwards"
+              className="upwards zoom-in"
               placeholder="blur"
             />
-            <Image src={bulb} alt="bulb" className="bulb" placeholder="blur" />
+            <Image src={bulb} alt="bulb" className="bulb zoom-in" placeholder="blur" />
             <Image
               src={plane}
               alt="plane"
-              className="plane"
+              className="plane zoom-in"
               placeholder="blur"
             />
             <Image
               src={heart}
               alt="heart"
-              className="heart"
+              className="heart zoom-in"
               placeholder="blur"
             />
-            <Image src={hero} alt="hero" className="hero" placeholder="blur" />
+            <Image src={hero} alt="hero" className="hero  in-up" placeholder="blur" />
           </div>
         </div>
       </div>

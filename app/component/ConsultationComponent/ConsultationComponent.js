@@ -2,6 +2,14 @@ import React, { Component } from "react";
 import Button from "../Button/Button";
 
 export default class ConsultationComponent extends Component {
+  componentDidMount() {
+    const element = document.querySelector(".consultation_wrapper");
+    const observer = new IntersectionObserver((entries) => {
+      element.classList.toggle("in-up", entries[0].isIntersecting);
+    });
+
+    observer.observe(element);
+  }
   render() {
     return (
       <div

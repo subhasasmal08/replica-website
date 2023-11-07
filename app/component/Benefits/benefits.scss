@@ -1,4 +1,4 @@
-.benefits_wrapper {
+.benefits_wrapper0, .benefits_wrapper1, .benefits_wrapper2, .benefits_wrapper3 {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,4 +18,25 @@
     font-weight: 400;
     margin: 0px;
   }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.in-up {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
 }

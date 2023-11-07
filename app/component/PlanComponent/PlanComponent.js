@@ -53,6 +53,22 @@ export default class PlanComponent extends Component {
       price: "$65",
     },
   ];
+
+  componentDidMount() {
+    const element = document.querySelector(".plan_header");
+    const observer = new IntersectionObserver((entries) => {
+      element.classList.toggle("in-up", entries[0].isIntersecting);
+    });
+
+    observer.observe(element);
+
+    const element_ = document.querySelector(".plan_card_content");
+    const observer_ = new IntersectionObserver((entries) => {
+      element_.classList.toggle("in-up", entries[0].isIntersecting);
+    });
+
+    observer_.observe(element_);
+  }
   render() {
     return (
       <div className="home_page_plan">
@@ -113,7 +129,7 @@ export default class PlanComponent extends Component {
                         /Month
                       </span>
                     </p>
-                    <Button name={"Book A Sesson"} />
+                    <Button name={"Book A Session"} />
                   </div>
                 </div>
               );

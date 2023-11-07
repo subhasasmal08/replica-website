@@ -38,6 +38,15 @@ export default class page extends Component {
     { name: "seminar_speaker", number: 35 },
     { name: "coaching_certificates", number: 12 },
   ];
+
+  componentDidMount() {
+    // const element = document.querySelector(".description_header");
+    // const observer = new IntersectionObserver((entries) => {
+    //   element.classList.toggle("in-right", entries[0].isIntersecting);
+    // });
+
+    // observer.observe(element);
+  }
   render() {
     return (
       <div className="about_wrapper">

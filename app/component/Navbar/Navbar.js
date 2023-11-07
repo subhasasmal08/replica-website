@@ -43,89 +43,95 @@ class Child extends Component {
   render() {
     return (
       <nav className="navbar">
-      <div className="navbar_subwrapper">
-      <Image src={logo} alt="logo" className="logo" placeholder="blur" />
-        <ul className="navbar_ul">
-          {this.navbarArr.map((item) => (
-            <li
-              key={item.link}
-              className={
-                this.props.pathname === item.link
-                  ? "active navbar_title"
-                  : "navbar_title"
-              }
-              // style={{ color: active === item.name && "active" }}
-            >
-              <div
+        <div className="navbar_subwrapper">
+          <Image src={logo} alt="logo" className="logo" placeholder="blur" />
+          <ul className="navbar_ul">
+            {this.navbarArr.map((item) => (
+              <li
+                key={item.link}
                 className={
-                  item.name === "Pages"
-                    ? "navbar_title pages_hover"
+                  this.props.pathname === item.link
+                    ? "active navbar_title"
                     : "navbar_title"
                 }
-                href={item.link}
-                style={{ textDecoration: "none" }}
-                onClick={() => this.props.router.push(item.link)}
+                // style={{ color: active === item.name && "active" }}
               >
                 <div
                   className={
                     item.name === "Pages"
-                      ? "navbar_tag page_tag"
-                      : item.name === "Blog"
-                      ? "navbar_tag blog_tag"
-                      : "navbar_tag"
+                      ? "navbar_title pages_hover"
+                      : this.props.pathname === item.link
+                      ? "active navbar_title"
+                      : "navbar_title"
                   }
+                  href={item.link}
+                  style={{ textDecoration: "none" }}
+                  onClick={() => this.props.router.push(item.link)}
                 >
-                  {item.name}
-                  <div class="dd_pages">
-                    {this.pagesDD.map((item) => {
-                      return (
-                        <p
-                          className="plans"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            item === "404 Page" &&
-                              this.props.router.push("/Pages");
-                          }}
-                        >
-                          {item}
-                        </p>
-                      );
-                    })}
-                  </div>
-                  <div class="dd_blog">
-                    {["Blog", "Single Blog"].map((item) => {
-                      return (
-                        <p
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            console.log(item);
-                            if (item === "Blog") {
-                              this.props.router.push("/Blog");
-                            } else {
-                              this.props.router.push("/SingleBlog");
-                            }
-                          }}
-                          className="blogs"
-                        >
-                          {item}
-                        </p>
-                      );
-                    })}
+                  {console.log(item.link, this.props.pathname)}
+
+                  <div
+                    className={
+                      item.name === "Pages"
+                        ? "navbar_tag page_tag"
+                        : item.name === "Blog"
+                        ? "navbar_tag blog_tag"
+                        : "navbar_tag"
+                    }
+                  >
+                    {item.name}
+                    <div class="dd_pages">
+                      {this.pagesDD.map((item) => {
+                        return (
+                          <p
+                            className="plans"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              item === "404 Page" &&
+                                this.props.router.push("/Pages");
+                              item === "Our  Plans" &&
+                                this.props.router.push("/Pages/Plans");
+                            }}
+                          >
+                            {item}
+                          </p>
+                        );
+                      })}
+                    </div>
+                    <div class="dd_blog">
+                      {["Blog", "Single Blog"].map((item) => {
+                        return (
+                          <p
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              console.log(item);
+                              if (item === "Blog") {
+                                this.props.router.push("/Blog");
+                              } else {
+                                this.props.router.push("/SingleBlog");
+                              }
+                            }}
+                            className="blogs"
+                          >
+                            {item}
+                          </p>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
-              </div>
-              {(item.name === "Pages" || item.name === "Blog") && (
-                <Down className="down_icon" />
-              )}
-            </li>
-          ))}
-        </ul>
-        <div className="social_media_icons">
-          <Insta />
-          <Twitter />
-          <Youtube />
+                {(item.name === "Pages" || item.name === "Blog") && (
+                  <Down className="down_icon" />
+                )}
+              </li>
+            ))}
+          </ul>
+          <div className="social_media_icons">
+            <Insta />
+            <Twitter />
+            <Youtube />
+          </div>
         </div>
-      </div>
       </nav>
     );
   }
@@ -194,7 +200,7 @@ export const FaceBook = (props) => (
   </svg>
 );
 
- export const Down = (props) => (
+export const Down = (props) => (
   <svg
     width="24px"
     height="24px"
