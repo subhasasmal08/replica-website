@@ -1,5 +1,5 @@
 "use client";
-import React, { Component } from "react";
+import React, { Component, useRef } from "react";
 import "./contact.scss";
 import Footer from "../component/Footer/Footer";
 import Contact from "../component/Contact/Contact";
@@ -7,7 +7,7 @@ import BigStar from "../../public/assets/Images/Bigstar.png";
 import Image from "next/image";
 import { FaceBook, Insta, Twitter, Youtube } from "../component/Navbar/Navbar";
 
-export default class page extends Component {
+class Child extends Component {
   RenderContactCards = [
     {
       icon: <Phone />,
@@ -25,6 +25,7 @@ export default class page extends Component {
       content: "Canggu, Badung Regency, Bali",
     },
   ];
+
   render() {
     return (
       <div className="contact_wrapper">
@@ -90,6 +91,13 @@ export default class page extends Component {
     );
   }
 }
+
+const Page = (props) => {
+  const ref = useRef();
+  return <Child {...props} ref={ref} />;
+};
+
+export default Page;
 
 const Phone = (props) => (
   <svg

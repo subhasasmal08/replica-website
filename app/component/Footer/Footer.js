@@ -1,12 +1,41 @@
-import React, { Component } from "react";
+import React, { Component, useRef } from "react";
 import Image from "next/image";
 import { Insta, Twitter, Youtube } from "../Navbar/Navbar";
 import logo from "../../../public/assets/Images/Logo_Lyfes-3-01.png";
 import Bg1 from "../../../public/assets/Images/Bg-1.png";
 import "./footer.scss";
 import Button from "../Button/Button";
+import { notify } from "@/app/layout";
 
-export default class Footer extends Component {
+class Child extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      email: "",
+    };
+  }
+  apiKey = "90cd554ab24346c2a8f6902773d44b83";
+  apiURL = "https://emailvalidation.abstractapi.com/v1/?api_key=" + this.apiKey;
+  sendEmailValidationRequest = async (email) => {
+    try {
+      const response = await fetch(this.apiURL + "&email=" + email);
+      const data = await response.json();
+      console.log(data);
+      data.email
+        ? notify({
+            type: "success",
+            msg: "Mail sent successfully!",
+          })
+        : notify({
+            type: "error",
+            msg: data.error.details.email,
+          });
+    } catch (error) {
+      throw error;
+    }
+  };
+
   render() {
     return (
       <div className="footer">
@@ -15,11 +44,22 @@ export default class Footer extends Component {
           <p className="subscribe_">Subscribe to newsletter</p>
           <p className="notify_">Get notified for our latest news and offers</p>
           <div className="input_">
+            {console.log(this.props.ref)}
             <input
+              ref={this.props.ref}
               className="email_input"
               placeholder="Your email address"
+              onChange={(e) => {
+                this.setState({ email: e.target.value });
+              }}
             ></input>
-            <Button name={"Subscribe Now"} />
+            <Button
+              onClick={() => {
+                this.sendEmailValidationRequest(this.state.email),
+                  this.setState({ email: "" });
+              }}
+              name={"Subscribe Now"}
+            />
           </div>
         </div>
 
@@ -65,3 +105,10 @@ export default class Footer extends Component {
     );
   }
 }
+
+const Page = (props) => {
+  const ref = useRef();
+  return <Child {...props} ref={ref} />;
+};
+
+export default Page;

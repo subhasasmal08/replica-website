@@ -12,9 +12,9 @@ export default class AboutComponent extends Component {
 
     this.state = {
       renderCountDivData: [
-        { name: "persons_mentored", number: 80 },
-        { name: "seminar_speaker", number: 35 },
-        { name: "coaching_certificates", number: 12 },
+        { name: "persons_mentored", number: 10 },
+        { name: "seminar_speaker", number: 20 },
+        { name: "coaching_certificates", number: 50 },
       ],
     };
   }
@@ -31,34 +31,41 @@ export default class AboutComponent extends Component {
       element_right.classList.toggle("in-right", entries[0].isIntersecting);
     });
     observer_right.observe(element_right);
+
+    // this.state.renderCountDivData.map((item, idx) => {
+    //   var i = 0;
+    //   setInterval(function () {
+    //     if (i == item.number) {
+    //       clearInterval(this);
+    //     } else {
+    //       let _data = [...this.state.renderCountDivData];
+    //       _data[idx].number = i++;
+    //       this.setState({ renderCountDivData: [..._data] });
+    //       console.log("Currently at " + i++);
+    //     }
+    //   }, 10);
+    // });
   }
 
-   count = (total) => {
-    var cout = 0;
-    // console.log(total);
-    var i = 0;
-    setInterval(function () {
-      if (cout === 10) clearInterval(this);
-      else {
-        console.log("Currently at " + i++);
-        cout = i++;
-      }
-    }, 10);
-    console.log(cout);
-    return cout;
-  };
-
-  
+  counter(num) {
+    console.log(num);
+    // let number = 0;
+    // var i = 0;
+    // setInterval(function () {
+    //   if (i == num) clearInterval(this);
+    //   else {
+    //     console.log("Currently at " + i++);
+    //   }
+    // }, 100);
+  }
 
   render() {
-  
-
     return (
       <div className="home_page_about">
         <div className="home_page_about_lhs">
           <h2 className="about_me_ ">About Me</h2>
           <div className="count_wrapper">
-          <h2 className="count_">{this.count}</h2>
+            {/* <h2 className="count_">{this.count}</h2> */}
             {this.state.renderCountDivData.map((item) => {
               return (
                 <div className="count_subwrapper">
