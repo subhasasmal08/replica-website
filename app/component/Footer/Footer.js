@@ -17,24 +17,24 @@ class Child extends Component {
   }
   apiKey = "90cd554ab24346c2a8f6902773d44b83";
   apiURL = "https://emailvalidation.abstractapi.com/v1/?api_key=" + this.apiKey;
-  sendEmailValidationRequest = async (email) => {
+   sendEmailValidationRequest = async (email) => {
     try {
-      const response = await fetch(this.apiURL + "&email=" + email);
-      const data = await response.json();
-      console.log(data);
-      data.email
-        ? notify({
-            type: "success",
-            msg: "Mail sent successfully!",
-          })
-        : notify({
-            type: "error",
-            msg: data.error.details.email,
-          });
+        const response = await fetch(this.apiURL + '&email=' + email);
+        const data = await response.json();
+        const isValidSMTP = data.is_smtp_valid.value;
+
+        if (isValidSMTP) {
+          this.setState({email : data.email})
+          console.log(data)
+            // use the email address in the mailto link
+        } else {
+            // show the user an error
+        }
     } catch (error) {
-      throw error;
+        throw error;
     }
-  };
+}
+  
 
   render() {
     return (
@@ -53,10 +53,11 @@ class Child extends Component {
                 this.setState({ email: e.target.value });
               }}
             ></input>
+            
             <Button
               onClick={() => {
-                this.sendEmailValidationRequest(this.state.email),
-                  this.setState({ email: "" });
+                this.sendEmailValidationRequest(this.state.email)
+                  // this.setState({ email: "" });
               }}
               name={"Subscribe Now"}
             />
