@@ -2,12 +2,13 @@ import React, { Component, useRef } from "react";
 import "./contact.scss";
 import Button from "../Button/Button";
 import emailjs from "@emailjs/browser";
+import { notify } from "@/app/layout";
 
 class Child extends Component {
   sendEmail = (e) => {
     e.preventDefault(); // prevents the page from reloading when you hit “Send”
     // console.log(this.props.ref.current);
-    console.log("ajskdhsaj");
+    console.log("sendEmail");
     emailjs
       .sendForm(
         "service_j64f6lg",
@@ -18,10 +19,18 @@ class Child extends Component {
       .then(
         (result) => {
           console.log(result);
+          notify({
+            type: "success",
+            msg: "Mail sent successfully!",
+          });
           // show the user a success message
         },
         (error) => {
           console.log(error);
+          notify({
+            type: "error",
+            msg: "Something went wrong!",
+          });
           // show the user an error
         }
       );

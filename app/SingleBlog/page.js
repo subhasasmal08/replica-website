@@ -1,5 +1,5 @@
 "use client";
-import React, { Component } from "react";
+import React, { Component, useRef } from "react";
 import Footer from "../component/Footer/Footer";
 import "./singleblog.scss";
 import Image from "next/image";
@@ -8,6 +8,8 @@ import worklife from "../../public/assets/Images/worklife.jpg";
 import { Insta, Twitter, Youtube } from "../component/Navbar/Navbar";
 import { usePathname, useRouter } from "next/navigation";
 import Button from "../component/Button/Button";
+import emailjs from "@emailjs/browser";
+import { notify } from "../layout";
 
 class Child extends Component {
   constructor(props) {
@@ -50,6 +52,36 @@ class Child extends Component {
     }
   }
 
+  sendEmail = (e) => {
+    e.preventDefault(); // prevents the page from reloading when you hit “Send”
+    // console.log(this.props.ref.current);
+    console.log("sendEmail");
+    emailjs
+      .sendForm(
+        "service_j64f6lg",
+        "template_m6t2sri",
+        this.props.form.current,
+        "_qkp45k05hE92TgB9"
+      )
+      .then(
+        (result) => {
+          console.log(result);
+          notify({
+            type: "success",
+            msg: "comment added successfully!",
+          });
+          // show the user a success message
+        },
+        (error) => {
+          console.log(error);
+          notify({
+            type: "error",
+            msg: "Something went wrong!",
+          });
+          // show the user an error
+        }
+      );
+  };
   render() {
     return (
       <div className="single_blog_wrapper">
@@ -120,9 +152,27 @@ class Child extends Component {
               <div className="social_media_wrapper">
                 <p>Share This Post:</p>
                 <div className="social_media_icons">
-                  <Insta className="insta" />
-                  <Twitter className="twitter" />
-                  <Youtube className="youtube" />
+                  <Insta
+                    className="insta"
+                    onClick={() =>
+                      window.open(
+                        "https://www.instagram.com/accounts/login/",
+                        "_blank"
+                      )
+                    }
+                  />
+                  <Twitter
+                    className="twitter"
+                    onClick={() =>
+                      window.open("https://twitter.com/i/flow/login", "_blank")
+                    }
+                  />
+                  <Youtube
+                    className="youtube"
+                    onClick={() =>
+                      window.open("https://www.youtube.com/", "_blank")
+                    }
+                  />
                 </div>
               </div>
             </div>
@@ -166,27 +216,35 @@ class Child extends Component {
             </div>
             <div className="divider"></div>
           </div>
-          <div className="reply_wrapper">
+          <form
+            className="reply_wrapper"
+            ref={this.props.form}
+            onSubmit={this.sendEmail}
+          >
             <h2 className="header_">Leave a Reply</h2>
             <p className="subheader_">
               Your email address will not be published. Required fields are
               marked *
             </p>
             <div className="input_wrapper">
-              <label req={"*"}>First Name </label>
-              <textarea style={{ height: "150px" }} className="input_" />
+              <label req={"*"}>Comment </label>
+              <textarea
+                style={{ height: "150px" }}
+                className="input_"
+                name="comment"
+              />
             </div>
             <div className="input_wrapper">
-              <label req={"*"}>First Name </label>
-              <input className="input_" />
+              <label req={"*"}>Name </label>
+              <input className="input_" name="name" />
             </div>
             <div className="input_wrapper">
-              <label req={"*"}>First Name </label>
-              <input className="input_" />
+              <label req={"*"}>Email </label>
+              <input className="input_" name="email" />
             </div>
             <div className="input_wrapper">
-              <label req={"*"}>First Name </label>
-              <input className="input_" />
+              <label>Website </label>
+              <input className="input_" name="website" />
             </div>
             <div className="checkbox_wrapper">
               <input type="checkbox" />
@@ -195,8 +253,8 @@ class Child extends Component {
                 time I comment.
               </p>
             </div>
-            <Button name={"Post Comment"} />
-          </div>
+            <input className="submit_btn" type="submit" value="Post Comment" />
+          </form>
         </div>
         <Footer />
       </div>
@@ -207,7 +265,9 @@ class Child extends Component {
 const Page = (props) => {
   const router = useRouter();
   const pathname = usePathname();
-  return <Child {...props} router={router} pathname={pathname} />;
+  const form = useRef();
+
+  return <Child {...props} router={router} pathname={pathname} form={form} />;
 };
 
 export default Page;

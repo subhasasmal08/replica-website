@@ -17,24 +17,39 @@ class Child extends Component {
   }
   apiKey = "90cd554ab24346c2a8f6902773d44b83";
   apiURL = "https://emailvalidation.abstractapi.com/v1/?api_key=" + this.apiKey;
-   sendEmailValidationRequest = async (email) => {
+  sendEmailValidationRequest = async (email) => {
     try {
-        const response = await fetch(this.apiURL + '&email=' + email);
-        const data = await response.json();
-        const isValidSMTP = data.is_smtp_valid.value;
+      const response = await fetch(this.apiURL + "&email=" + email);
+      const data = await response.json();
+      const isValidSMTP = data.is_smtp_valid?.value;
 
-        if (isValidSMTP) {
-          this.setState({email : data.email})
-          console.log(data)
-            // use the email address in the mailto link
-        } else {
-            // show the user an error
-        }
+      if (isValidSMTP) {
+        this.setState({ email: data.email });
+        console.log(data);
+        console.log(response);
+        notify({
+          type: "success",
+          msg: "Thank you for subscribing!",
+        });
+        // use the email address in the mailto link
+      } else {
+        console.log(response);
+        // !response.ok &&
+        notify({
+          type: "error",
+          msg: "Invalid email!",
+        });
+        // show the user an error
+      }
     } catch (error) {
-        throw error;
+      console.log(error);
+      notify({
+        type: "error",
+        msg: "Something went wrong!",
+      });
+      // throw error;
     }
-}
-  
+  };
 
   render() {
     return (
@@ -53,11 +68,11 @@ class Child extends Component {
                 this.setState({ email: e.target.value });
               }}
             ></input>
-            
+
             <Button
               onClick={() => {
-                this.sendEmailValidationRequest(this.state.email)
-                  // this.setState({ email: "" });
+                this.sendEmailValidationRequest(this.state.email);
+                // this.setState({ email: "" });
               }}
               name={"Subscribe Now"}
             />
@@ -80,13 +95,31 @@ class Child extends Component {
             </p>
             <div className="social_media_icons">
               <div className="media_container">
-                <Insta className="insta" />
+                <Insta
+                  className="insta"
+                  onClick={() =>
+                    window.open(
+                      "https://www.instagram.com/accounts/login/",
+                      "_blank"
+                    )
+                  }
+                />
               </div>
               <div className="media_container">
-                <Twitter className="twitter" />
+                <Twitter
+                  className="twitter"
+                  onClick={() =>
+                    window.open("https://twitter.com/i/flow/login", "_blank")
+                  }
+                />
               </div>
               <div className="media_container">
-                <Youtube className="youtube" />
+                <Youtube
+                  className="youtube"
+                  onClick={() =>
+                    window.open("https://www.youtube.com/", "_blank")
+                  }
+                />
               </div>
             </div>
           </div>

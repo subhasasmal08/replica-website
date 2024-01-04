@@ -6,30 +6,30 @@
     background-color: #f9c4ba;
     position: relative;
     text-align: center;
- 
+
     .service_header {
       position: relative;
-    .service_{
-      color: #4c3347;
-      font-family: "Cormorant Garamond", "serif";
-      font-size: 64px;
-      font-weight: 700;
-      margin-bottom: 0;
-    }
-    .bigstar_image {
-      width: 60px;
-      height: 60px;
-      position: absolute;
-      top: -39%;
-      left: 39%;
-    }
-    .smallstar_image {
-      width: 40px;
-      height: 40px;
-      position: absolute;
-      right: 39%;
-      bottom: -16%;
-    }
+      .service_ {
+        color: #4c3347;
+        font-family: "Cormorant Garamond", "serif";
+        font-size: 64px;
+        font-weight: 700;
+        margin-bottom: 0;
+      }
+      .bigstar_image {
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        top: -39%;
+        left: 39%;
+      }
+      .smallstar_image {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        right: 39%;
+        bottom: -16%;
+      }
     }
     .service_content {
       transition: background 0.3s, border 0.3s, border-radius 0.3s,
@@ -168,13 +168,14 @@
             margin: 0;
           }
 
-          .medias_wrapper{
+          .medias_wrapper {
             display: flex;
             gap: 10px;
 
-            .social_media_icons{
+            .social_media_icons {
               display: flex;
               gap: 10px;
+              cursor: pointer;
             }
           }
         }

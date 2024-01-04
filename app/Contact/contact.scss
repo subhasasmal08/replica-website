@@ -123,29 +123,34 @@
             justify-content: center;
             align-items: center;
             gap: 10px;
+
             .insta {
               background-color: #fff;
               border-radius: 50%;
               width: 30px;
               height: 30px;
+              cursor: pointer;
             }
             .twitter {
               background-color: #fff;
               border-radius: 50%;
               width: 30px;
               height: 30px;
+              cursor: pointer;
             }
             .youtube {
               background-color: #fff;
               border-radius: 50%;
               width: 30px;
               height: 30px;
+              cursor: pointer;
             }
             .facebook {
               background-color: #fff;
               border-radius: 50%;
               width: 35px;
               height: 35px;
+              cursor: pointer;
             }
           }
         }

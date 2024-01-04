@@ -90,8 +90,9 @@
       display: flex;
       justify-content: center;
       gap: 10px;
+      cursor: pointer;
 
-      .media_container{
+      .media_container {
         background-color: #fff;
         border-radius: 50%;
         width: 30px;
@@ -100,7 +101,9 @@
         justify-content: center;
         align-items: center;
       }
-      .insta, .twitter, .youtube {
+      .insta,
+      .twitter,
+      .youtube {
         width: 20px;
         height: 20px;
       }

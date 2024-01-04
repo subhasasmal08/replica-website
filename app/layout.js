@@ -4,7 +4,12 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import React from "react";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--inter",
+  adjustFontFallback: false,
+});
 
 const metadata = {
   title: "Portfolio",
@@ -13,8 +18,11 @@ const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" className={inter.variable}>
+      <head>
+        <title>Blog</title>
+      </head>
+      <body className={inter.className} style={{ margin: "0px" }}>
         <Navbar />
         <ToastContainer hideProgressBar />
         {children}
@@ -24,7 +32,7 @@ export default function RootLayout({ children }) {
 }
 
 export const notify = (data, interval = 5000) => {
-  console.log(data);
+  console.log(data, "data");
   return toast(
     (t) => (
       <div className="emai_toast">

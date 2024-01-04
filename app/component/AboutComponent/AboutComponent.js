@@ -16,6 +16,7 @@ export default class AboutComponent extends Component {
         { name: "seminar_speaker", number: 20 },
         { name: "coaching_certificates", number: 50 },
       ],
+      count: 0,
     };
   }
 
@@ -47,6 +48,22 @@ export default class AboutComponent extends Component {
     // });
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.count !== this.state.count) {
+      const id = setInterval(
+        () =>
+          this.setState((prevState) => ({
+            count: prevState + 1,
+          })),
+        10
+      );
+
+      return () => {
+        clearInterval(id);
+      };
+    }
+  }
+
   counter(num) {
     console.log(num);
     // let number = 0;
@@ -65,7 +82,8 @@ export default class AboutComponent extends Component {
         <div className="home_page_about_lhs">
           <h2 className="about_me_ ">About Me</h2>
           <div className="count_wrapper">
-            {/* <h2 className="count_">{this.count}</h2> */}
+            {console.log(this.state.count)}
+            {/* <h2 className="count_">{this.state.count}</h2> */}
             {this.state.renderCountDivData.map((item) => {
               return (
                 <div className="count_subwrapper">

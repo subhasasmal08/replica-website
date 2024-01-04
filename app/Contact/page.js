@@ -74,10 +74,33 @@ class Child extends Component {
               <div className="social_media_wrapper">
                 <p className="social_media_tag">Social Media:</p>
                 <div className="social_media_icons">
-                  <Insta className="insta" />
-                  <Twitter className="twitter" />
-                  <Youtube className="youtube" />
-                  <FaceBook className="facebook" />
+                  <Insta
+                    className="insta"
+                    onClick={() =>
+                      window.open(
+                        "https://www.instagram.com/accounts/login/",
+                        "_blank"
+                      )
+                    }
+                  />
+                  <Twitter
+                    className="twitter"
+                    onClick={() =>
+                      window.open("https://twitter.com/i/flow/login", "_blank")
+                    }
+                  />
+                  <Youtube
+                    className="youtube"
+                    onClick={() =>
+                      window.open("https://www.youtube.com/", "_blank")
+                    }
+                  />
+                  <FaceBook
+                    className="facebook"
+                    onClick={() =>
+                      window.open("https://www.facebook.com/", "_blank")
+                    }
+                  />
                 </div>
               </div>
             </div>
