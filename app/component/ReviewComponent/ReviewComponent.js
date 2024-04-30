@@ -84,8 +84,13 @@ export default function ReviewComponent() {
       }
     }, speed);
   };
-
-  const carouselItems = document.querySelectorAll(".slider_wrapper");
+  const carouselItems = () => {
+    if (document !== undefined) {
+      return document.querySelectorAll(".slider_wrapper");
+    } else {
+      return;
+    }
+  };
   let i = 1;
 
   setInterval(() => {
